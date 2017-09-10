@@ -4,13 +4,15 @@
 <title>{% block title %}Welcome{% endblock %} — handpainter's guild</title>
 <body>
   <header>
-    <h1>handpainter's guild</h1>
+    <h1>The Handpainter's Guild</h1>
+    <h3>Hub for Inspiration, Learning, and Networking</h3>
+
     <nav>
       <ul class="nav navbar-nav">
         <li{% if this._path == '/' %} class="active"{% endif
-          %}><a href="{{ '/'|url }}">Welcome</a></li>
+          %}><a href="{{ '/'|url }}">Home</a></li>
         {% for href, title in [
-          ['/articles', 'Articles']
+          ['/articles', 'Articles'],['/workshop', '#The-Workshop'],['/tutorials', 'Tutorials'],['/pinterest', 'Pinterest'],['/facebook', 'Facebook'],['/twitter', 'Twitter'],['/join', 'Join']
         ] %}
           <li{% if this.is_child_of(href) %} class="active"{% endif
             %}><a href="{{ href|url }}">{{ title }}</a></li>
@@ -22,6 +24,6 @@
     {% block body %}{% endblock %}
   </div>
   <footer>
-    &copy; Copyright 2017 by Azaraen.
+    &copy; 2017. Handpainter's Guild by Azaraen.
   </footer>
 </body>
